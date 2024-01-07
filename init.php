@@ -24,7 +24,7 @@ include_once("classes/RaceTrainingDao.php");
 include_once("classes/RecurringTrainingDao.php");
 include_once("classes/ScheduleHelper.php");
 
-$ini = parse_ini_file("config.ini", true)["rdb"];
+$ini = parse_ini_file("config.ini", true)["wio"];
 
 try {
     $pdo = new PDO(

@@ -30,7 +30,7 @@ class RecurringTrainingDao extends Dao
             if (!$this->query(
                 "REPLACE INTO $this->tableName (`day`, `training_sport`, `title`, `description`) VALUES (?, ?, ?, ?)",
                 $day,
-                $object['sport_id'],
+                $object['training_sport'],
                 $object['title_' . $day],
                 $object['description_' . $day]
             )) {

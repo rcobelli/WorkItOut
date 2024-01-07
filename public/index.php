@@ -27,7 +27,7 @@ if (!isset($_GET['month']) || !isset($_GET['year'])) {
 $detect = new MobileDetect();
 
 if ($detect->isMobile()) {
-    $workouts = $helper->fetchSchedule('2024-01-31');
+    $workouts = $helper->fetchSchedule(date('Y-m-d'));
 
     echo "<h5>" . date('D, F j Y') . "</h5>";
 

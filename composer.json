@@ -1,0 +1,17 @@
+{
+    "name": "ryan/work_it_out",
+    "authors": [
+        {
+            "name": "Ryan Cobelli",
+            "email": "ryan.cobelli@rybel-llc.com"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "ext-mysqli": "*",
+        "ext-curl": "*",
+        "ext-simplexml": "*",
+        "ext-openssl": "*",
+        "mobiledetect/mobiledetectlib": "^4.8"
+    }
+}

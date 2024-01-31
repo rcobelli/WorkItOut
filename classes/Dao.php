@@ -1,5 +1,7 @@
 <?php
 
+use Rybel\backbone\Helper;
+
 abstract class Dao extends Helper
 {
     public $tableName;

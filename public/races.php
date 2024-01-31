@@ -2,6 +2,23 @@
 
 include '../init.php';
 
+$samlHelper->processSamlInput();
+
+if (!$samlHelper->isLoggedIn()) {
+    header("Location: index.php");
+    die();
+}
+
+$config['type'] = Rybel\backbone\LogStream::console;
+
+$helper = new ScheduleHelper($config);
+
+// Boilerplate
+$page = new Rybel\backbone\page();
+$page->addHeader("../includes/header.php");
+$page->addFooter("../includes/footer.php");
+$page->addHeader("../includes/navbar.php");
+
 $helper = new RaceDao($config);
 $sportDao = new SportDao($config);
 
@@ -11,36 +28,28 @@ if ($_REQUEST['action'] == 'delete') {
         header("Location: ?");
         die();
     } else {
-        $errors[] = $helper->getErrorMessage();
+        $page->addError($helper->getErrorMessage());
     }
 } elseif ($_REQUEST['submit'] == 'create') {
     if ($helper->insert($_POST)) {
         header("Location: ?");
         die();
     } else {
-        $errors[] = $helper->getErrorMessage();
+        $page->addError($helper->getErrorMessage());
     }
 } elseif ($_REQUEST['submit'] == 'training') {
     $raceDao = new RaceTrainingDao($config);
     if (!$raceDao->insert($_POST)) {
-        $errors[] = $raceDao->getErrorMessage();
+        $page->addError($raceDao->getErrorMessage());
     }
 } elseif ($_REQUEST['submit'] == 'update') {
     if ($helper->update($_POST['id'], $_POST)) {
         header("Location: ?");
         die();
     } else {
-        $errors[] = $helper->getErrorMessage();
+        $page->addError($helper->getErrorMessage());
     }
 }
-
-// Site/page boilerplate
-$site = new site($errors);
-$site->addHeader("../includes/navbar.php");
-init_site($site);
-
-$page = new page();
-$site->setPage($page);
 
 
 // Start rendering the content
@@ -94,10 +103,5 @@ if ($_REQUEST['action'] == 'create') {
     <?php
 }
 
-
-// End rendering the content
 $content = ob_get_clean();
-$page->setContent($content);
-
-$site->render();
-?>
+$page->render($content);

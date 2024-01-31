@@ -12,6 +12,13 @@
         "ext-curl": "*",
         "ext-simplexml": "*",
         "ext-openssl": "*",
-        "mobiledetect/mobiledetectlib": "^4.8"
-    }
+        "mobiledetect/mobiledetectlib": "^4.8",
+        "rybel-llc/backbone": "1.*"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/Rybel-LLC/Backbone"
+        }
+    ]
 }

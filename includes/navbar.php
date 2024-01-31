@@ -11,13 +11,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="../public/index.php">Calendar</a>
+                    <a class="nav-link" href="index.php">Calendar</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="../public/races.php">Events</a>
+                    <a class="nav-link" href="races.php">Events</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="../public/sports.php">Sports</a>
+                    <a class="nav-link" href="sports.php">Sports</a>
                 </li>
             </ul>
         </div>

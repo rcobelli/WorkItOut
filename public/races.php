@@ -11,8 +11,6 @@ if (!$samlHelper->isLoggedIn()) {
 
 $config['type'] = Rybel\backbone\LogStream::console;
 
-$helper = new ScheduleHelper($config);
-
 // Boilerplate
 $page = new Rybel\backbone\page();
 $page->addHeader("../includes/header.php");
